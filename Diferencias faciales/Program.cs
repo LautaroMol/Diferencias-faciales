@@ -5,17 +5,17 @@ class Programa
 {
     static void Main(string[] args)
     {
+        if (args.Length == 0)
+        {
+            Console.WriteLine("por favor arrastre un video y luego presione enter");
+        }
+        string video = Console.ReadLine();
         string carpeta = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory) + "\\diferencias_faciales";
         if (!System.IO.Directory.Exists(carpeta))
         {
             System.IO.Directory.CreateDirectory(carpeta);
         }
         HashSet<Rect> carasdist = new HashSet<Rect>();
-        if (args.Length == 0)
-        {
-            Console.WriteLine("por favor arrastre un video y luego presione enter");
-        }
-        string video = Console.ReadLine();
         if (System.IO.File.Exists(video) == false)
         {
             Console.Write("el archivo del video no existe");
