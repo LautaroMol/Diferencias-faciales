@@ -9,7 +9,7 @@ class Programa
         {
             Console.WriteLine("por favor arrastre un video y luego presione enter");
         }
-        string video = Console.ReadLine();
+        string video = Console.ReadLine().Trim('"');
         string carpeta = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory) + "\\diferencias_faciales";
         if (!System.IO.Directory.Exists(carpeta))
         {
